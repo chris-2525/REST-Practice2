@@ -13,15 +13,13 @@ public class PaymentsController {
 
     private final PaymentsProxy paymentsProxy;
 
-    public PaymentsController(PaymentsProxy paymentsProxy){
-        this.paymentsProxy = paymentsProxy;
-    }
+    public PaymentsController(PaymentsProxy paymentsProxy) {this.paymentsProxy = paymentsProxy;}
 
-    @PostMapping
-    public Payment createPayment(@RequestBody Payment payment){
-
+    @PostMapping("/payment")
+    public Payment createPayment(@RequestBody Payment payment) {
         String requestId = UUID.randomUUID().toString();
         return paymentsProxy.createPayment(requestId, payment);
-
     }
+
+
 }

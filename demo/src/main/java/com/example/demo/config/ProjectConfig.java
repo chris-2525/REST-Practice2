@@ -1,9 +1,10 @@
 package com.example.demo.config;
 
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Configuration;
 
-@Controller
-@EnableFeignClients(basePackages = "com.example.proxy")
+
+@Configuration
+@EnableFeignClients(basePackages = "com.example.demo.proxy")
 public class ProjectConfig {
 }
